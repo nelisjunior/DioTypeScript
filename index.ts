@@ -1,30 +1,7 @@
-// Types
-// Interfaces
+const input = document.getElementById('input') as HTMLInputElement;
 
-interface IAnimal {
-    nome: string;
-    tipo: 'terrestre' | 'aquatico';
-    domestico: boolean;
+input.addEventListener('input', (event) => {
+    const i = event.currentTarget as HTMLInputElement;
+    console.log(i.value);
 
-}
-
-interface IFelino extends IAnimal {
-    visaoNoturn: boolean;
-}
-
-interface ICanino extends IAnimal {
-    porte: 'pequeno' | 'medio' | 'grande';
-}
-
-type IDomestico = IFelino | ICanino;
-
-
-const animal: IDomestico = {
-    domestico: true,
-    nome: 'Rex',
-    porte: 'grande',
-    tipo: 'terrestre',
-    
-
-}
-
+});
